@@ -1,13 +1,3 @@
-
-Installing Bristol Summary (x.y.z = 0.60.8, for example):
-
-	a. tar -zxvf bristol-x.y.z.tar.gz
-	b. cd bristol-x.y.z
-	c. ./configure
-	d. make
-	e. sudo make install
-	f. /usr/local/bin/startBristol -mini
-
 Table of Contents:
 
 	1. About Bristol
@@ -47,15 +37,16 @@ the DSP code is all packaged into the engine and the GUI was written for
 bristol. There are a number of optional extra packages that bristol can use to
 give a more complete set of binaries. Also refer to section 1.3 below.
 
-	libx11-dev       Bristol GUI requires this package
-	libasound2-dev   ALSA support requires this package
-	jackd            Jack support requires this package
-	libjack-dev      Jack support requires this package
+	libx11-dev           Bristol GUI requires this package
+	libasound2-dev       ALSA support requires this package
+	jackd                Jack support requires this package
+	libjack-jackd2-dev   Jack support requires this package
 
 The system will also need libm.so to be installed as well as the build utils 
-however this is a part of a normal distribution. The build utility requirements
-is a little outside the scope of this document, it is assumed that make/gcc/as
-are previously installed.
+however this is a part of a normal distribution. 
+
+The build utility requirements is a little outside the scope of this document. 
+It is assumed that make, gcc, as, git, sed, iconv ... are previously installed.
 
 	2.2. Unpack the archive.
 
