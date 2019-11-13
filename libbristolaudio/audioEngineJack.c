@@ -39,7 +39,7 @@
 
 #ifdef _BRISTOL_JACK
 #if (BRISTOL_HAS_ALSA == 1)
-#include <alsa/iatomic.h>
+//#include <alsa/iatomic.h>
 #endif
 
 /*
