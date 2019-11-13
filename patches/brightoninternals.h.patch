@@ -1,0 +1,37 @@
+--- bristol-0.60.11-00/include/brighton/brightoninternals.h	2012-04-27 13:04:29.000000000 +0200
++++ packaging/bristol-0.60.11/include/brighton/brightoninternals.h	2013-05-02 19:55:03.387267984 +0200
+@@ -192,6 +192,17 @@
+ #define BRIGHTON_NRP_COUNT 128
+ #define BRIGHTON_GANG_COUNT 8
+ 
++#define BRIGHTON_MAP_BASE_TYPE int
++#define BRIGHTON_INVALID_KEYMAP_FILTER -1
++#define BRIGHTON_INVALID_INPUT_KEY -2
++#define BRIGHTON_INVALID_OUTPUT_KEY -3
++typedef struct BrightonKeymapFilter
++{
++    BRIGHTON_MAP_BASE_TYPE* keyin;
++    BRIGHTON_MAP_BASE_TYPE* keyout;
++    int size;
++} brightonKeymapFilter;
++
+ typedef struct BrightonWindow {
+ 	unsigned int flags;
+ 	struct BrightonWindow *next, *last;
+@@ -247,6 +258,7 @@
+ 	/* CC value mapping tables */
+ 	u_char valuemap[128][128];
+ 	int kbdmap[256][2];
++        brightonKeymapFilter* filter;
+ 	int dcTimeout;
+ } brightonWindow;
+ 
+@@ -369,5 +381,8 @@
+ 
+ extern void brightonRegisterController(brightonDevice *);
+ 
++extern void* brightonFreeKeymapFilter(brightonWindow *);
++extern brightonKeymapFilter* brightonCreateKeymapFilter();
++
+ #endif /* BRIGHTONINTERNALS_H */
+ 

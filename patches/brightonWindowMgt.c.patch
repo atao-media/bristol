@@ -1,0 +1,19 @@
+--- bristol-0.60.11-00/libbrighton/brightonWindowMgt.c	2012-04-27 13:04:28.000000000 +0200
++++ packaging/bristol-0.60.11/libbrighton/brightonWindowMgt.c	2013-05-02 19:50:09.641811382 +0200
+@@ -98,6 +98,8 @@
+ 	bwin->next = winlist;
+ 	winlist = bwin;
+ 
++        bwin->filter = brightonCreateKeymapFilter();
++
+ 	/*
+ 	 * Force a fake size to ensure the first configure notify is picked up.
+ 	 */
+@@ -145,6 +147,7 @@
+ 			bwin->bitmaps->name);
+ 
+ 	bwin->flags = 0;
++        brightonFreeKeymapFilter(bwin);
+ 	brightonfree(bwin);
+ }
+ 
