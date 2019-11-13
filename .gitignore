@@ -1,4 +1,4 @@
-archives
+.archives
 *.original
 
 Makefile
