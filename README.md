@@ -59,7 +59,7 @@ A script is provided that allows to generate a french azerty mapping to any exis
 
 ```bash
 
-./scripts/azerty4bristol.sh
+./scripts/azerty4bristol-sh
 
 ```
 The customized file will be under `~/.bristol/memory/profiles/`. It will be used at the next launch of Bristol as Hammond B3. 
@@ -142,9 +142,21 @@ KB_OUT=$(aconnect -i|grep LPK25|grep client|cut -d':' -f1|cut -d' ' -f2) \
 
 ```
 
+## Dev
+
+### Install 
+
+Packages required:
+* to modify `Makefile.am`, `acinclude.m4` or `configure.ac`: Automake and Perl,
+* to modify `configure.ac`: Autoconf and GNU m4
+
+## TODO
+
+Do it again but based on [debian package code](https://salsa.debian.org/multimedia-team/bristol).
+
 ## Credits
 
-It's a fork of Bristol 0.60.11 from archive available on [sourceforge](https://sourceforge.net/projects/bristol/). See ChangeLog and NEWS.
+It's a fork of [Bristol](http://bristol.sourceforge.net/), version [0.60.11](https://freefr.dl.sourceforge.net/project/bristol/bristol/0.60/bristol-0.60.11.tar.gz).
 
 Local changes:
 - [bristol: FTBFS: audioEngineJack.c:42:26: fatal error: alsa/iatomic.h: No such file or directory](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=834180) 
